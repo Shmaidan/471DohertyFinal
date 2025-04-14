@@ -18,11 +18,11 @@ public class Spawner : MonoBehaviour
     {
         // Check if all enemies are dead
        
-        currentEnemies.RemoveAll(enemy => enemy == null);
-        if (currentEnemies.Count == 0 && !isRespawning)
-        {
-            StartCoroutine(RespawnWave());
-        }
+        //currentEnemies.RemoveAll(enemy => enemy == null);
+      //  if (currentEnemies.Count == 0 && !isRespawning)
+       // {
+       //     StartCoroutine(RespawnWave());
+       // }
     }
 
 

@@ -95,6 +95,12 @@ public class FirstPersonController : MonoBehaviour
             health -= 1;
             Destroy(other.gameObject);
         }
+
+        if (other.CompareTag("Laser"))
+        {
+            Debug.Log("Laser hit!");
+            health -= 1;
+        }
     }
     void OnLook(InputValue lookVal)
     {
