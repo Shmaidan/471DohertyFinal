@@ -24,6 +24,10 @@ public class FirstPersonController : MonoBehaviour
     GameObject PlayerBullet;
     [SerializeField]
     float health = 8;
+    [SerializeField]
+    float shootCooldown = 0.5f;  // Cooldown duration in seconds
+
+    private float shootCooldownTimer = 0f;
     private bool hasPowerup = false;
 
     //Jumping
@@ -77,6 +81,10 @@ public class FirstPersonController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        if (shootCooldownTimer > 0)
+        {
+            shootCooldownTimer -= Time.deltaTime;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -106,18 +114,22 @@ public class FirstPersonController : MonoBehaviour
     }
     void OnAttack()
     {
-        Instantiate(PlayerBullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
+        if (shootCooldownTimer <= 0f)
+        {
+            Instantiate(PlayerBullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
+            shootCooldownTimer = shootCooldown;  // Reset the cooldown timer
+        }
     }
+
     
-
     //void OnTriggerEnter(Collider other)
-   // {
-        //if (other.CompareTag("Powerup"))
-       // {
-        //   hasPowerup = true;
-         //   jumpHeight = 5f; // Increased jump height
-          //  Destroy(other.gameObject);
+    // {
+    //if (other.CompareTag("Powerup"))
+    // {
+    //   hasPowerup = true;
+    //   jumpHeight = 5f; // Increased jump height
+    //  Destroy(other.gameObject);
 
-       // }
+    // }
     //}
 }
