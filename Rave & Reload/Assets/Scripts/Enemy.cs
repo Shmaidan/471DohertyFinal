@@ -2,6 +2,7 @@
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Enemy : MonoBehaviour
 {
@@ -12,12 +13,14 @@ public class Enemy : MonoBehaviour
     private Transform player;
    private Rigidbody enemyRb;
     public ParticleSystem particles;
+    public AudioSource deathSound;
     
     public bool isDead; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
+        death = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
        
     }
@@ -29,6 +32,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Instantiate(particles, transform.position, Quaternion.identity);
+            death.PlayOneShot(deathSound);
             Destroy(gameObject);
         }
 

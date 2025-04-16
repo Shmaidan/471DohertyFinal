@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
-  speed: 2
-  particles: {fileID: 6458546537897947141, guid: 2221c9979f1bc7348b4bdf7a205e0912, type: 3}
+  speed: 1.5
+  particles: {fileID: 2915937954629518116, guid: d1e98e5c10cda284d8e2f1620eeb153a, type: 3}
   isDead: 0
 --- !u!114 &1818109688066623329
 MonoBehaviour:
@@ -172,8 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBullet: {fileID: 1214973524969690596, guid: 6a65d72c05a936a42b3cb1ccfc5791b7, type: 3}
   bulletSpawner: {fileID: 7323640488818088492}
-  shootingInterval: 3
-  bulletSpeed: 10
+  shootingInterval: 2
+  bulletSpeed: 15
 --- !u!1 &4272688300156736545
 GameObject:
   m_ObjectHideFlags: 0

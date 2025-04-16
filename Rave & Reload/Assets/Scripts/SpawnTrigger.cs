@@ -9,7 +9,7 @@ public class SpawnTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             
-            gameObject.SetActive(true);  // Disable the trigger so it doesn’t fire again
+            spawner.SetActive(true);  // Disable the trigger so it doesn’t fire again
         }
     }
 }

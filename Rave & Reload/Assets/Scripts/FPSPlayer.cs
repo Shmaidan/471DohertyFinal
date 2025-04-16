@@ -32,6 +32,7 @@ public class FirstPersonController : MonoBehaviour
 
     //Jumping
     bool hasJumped = false;
+    public bool hasBounce = false;
 
     float ySpeed = 0;
     [SerializeField]
@@ -99,7 +100,12 @@ public class FirstPersonController : MonoBehaviour
         if (other.CompareTag("Laser"))
         {
             Debug.Log("Laser hit!");
-            health -= 1;
+            health -= 2;
+        }
+        if (other.CompareTag("Drum") )
+        {
+            Debug.Log("Drum hit!");
+            health -= 2;
         }
     }
     void OnLook(InputValue lookVal)
