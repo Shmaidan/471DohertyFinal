@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
-        death = GetComponent<AudioSource>();
+      
         player = GameObject.FindGameObjectWithTag("Player").transform;
        
     }
@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Instantiate(particles, transform.position, Quaternion.identity);
-            death.PlayOneShot(deathSound);
+            
             Destroy(gameObject);
         }
 
