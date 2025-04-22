@@ -9,7 +9,7 @@ public class CymbalManager : MonoBehaviour
     {
         // Set initial count by how many cymbals exist in the scene
         cymbalsAlive = GameObject.FindGameObjectsWithTag("Cymbal").Length;
-        Debug.Log("Cymbals in room: " + cymbalsAlive);
+      
     }
 
     public void CymbalBroken()
@@ -19,7 +19,7 @@ public class CymbalManager : MonoBehaviour
 
         if (cymbalsAlive <= 0)
         {
-            Debug.Log("All cymbals broken — vanishing wall!");
+            Debug.Log("All cymbals broke");
             vanishWall.SetActive(false);
         }
     }
