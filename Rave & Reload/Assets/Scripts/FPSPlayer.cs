@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -12,8 +13,12 @@ public class FirstPersonController : MonoBehaviour
     Rigidbody rb; 
     float cameraUpRotation;
     CharacterController controller;
+
     [SerializeField]
-    float speed = 2.0f;
+    float speed = 3f;
+   
+   
+
     [SerializeField]
     float mouseSensitivity = 40;
     [SerializeField]
@@ -23,7 +28,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField]
     GameObject PlayerBullet;
     [SerializeField]
-    float health = 8;
+    float health = 10;
     [SerializeField]
     float shootCooldown = 0.5f;  // Cooldown duration in seconds
 
@@ -44,13 +49,17 @@ public class FirstPersonController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
         Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<CharacterController>();
     }
 
+   
+
     // Update is called once per frame
     void Update()
     {
+       
         float lookX = mouseMovement.x * Time.deltaTime * mouseSensitivity;
         float lookY = mouseMovement.y * Time.deltaTime * mouseSensitivity;
 
@@ -67,7 +76,6 @@ public class FirstPersonController : MonoBehaviour
         Vector3 actual_movement = (transform.forward * moveZ) + (transform.right * moveX);
 
         //jumping code
-
         if (hasJumped)
         {
             hasJumped = false;
@@ -78,7 +86,8 @@ public class FirstPersonController : MonoBehaviour
 
         controller.Move(actual_movement * Time.deltaTime * speed);
 
-        if( health <= 0)
+
+        if ( health <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
@@ -87,6 +96,7 @@ public class FirstPersonController : MonoBehaviour
             shootCooldownTimer -= Time.deltaTime;
         }
     }
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -108,6 +118,8 @@ public class FirstPersonController : MonoBehaviour
             health -= 2;
         }
     }
+
+    
     void OnLook(InputValue lookVal)
     {
         mouseMovement = lookVal.Get<Vector2>();
@@ -131,6 +143,11 @@ public class FirstPersonController : MonoBehaviour
             Instantiate(PlayerBullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
             shootCooldownTimer = shootCooldown;  // Reset the cooldown timer
         }
+    }
+    public void AddHealth(float amount)
+    {
+        health += amount;
+        Debug.Log("Health = " + health + amount);
     }
 
     

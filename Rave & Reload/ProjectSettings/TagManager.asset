@@ -8,6 +8,9 @@ TagManager:
   - Wow
   - Laser
   - Turret
+  - Drum
+  - Health
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
