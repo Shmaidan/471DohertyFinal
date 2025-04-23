@@ -12253,7 +12253,7 @@ MonoBehaviour:
   particles: {fileID: 2915937954629518116, guid: d1e98e5c10cda284d8e2f1620eeb153a, type: 3}
   deathSound: {fileID: 0}
   isVulnerable: 0
-  offLasers: {fileID: 0}
+  offLasers: {fileID: 950166422}
 --- !u!1 &858257300
 GameObject:
   m_ObjectHideFlags: 0
