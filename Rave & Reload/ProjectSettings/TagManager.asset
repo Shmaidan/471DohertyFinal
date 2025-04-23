@@ -12,6 +12,7 @@ TagManager:
   - Health
   - PlayerBullet
   - Cymbal
+  - Weak
   layers:
   - Default
   - TransparentFX

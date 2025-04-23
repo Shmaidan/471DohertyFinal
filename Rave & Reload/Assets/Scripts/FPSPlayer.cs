@@ -115,7 +115,7 @@ public class FirstPersonController : MonoBehaviour
         if (other.CompareTag("Drum") )
         {
             Debug.Log("Drum hit!");
-            health -= 2;
+            health -= 1;
         }
     }
 

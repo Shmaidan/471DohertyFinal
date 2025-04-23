@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour
     {
         
         //what do we do when pacing?
-        print("I'm pacing!");
+        //print("I'm pacing!");
         target = route[routeIndex];
         MoveTo(target);
 
@@ -87,14 +87,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.CompareTag("Player"))
-        {
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
-        }
-    }
+    
 
     void MoveTo(GameObject t)
     {

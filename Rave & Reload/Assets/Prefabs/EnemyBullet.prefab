@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2ceac540dd3347f4bab3a7ba03cee23c, type: 2}
+  - {fileID: 2100000, guid: 7f8c0acde97a20c4d9966810a7350349, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletspeed: 15
-  lifetime: 5
+  lifetime: 3
 --- !u!82 &-6850201437454046952
 AudioSource:
   m_ObjectHideFlags: 0
