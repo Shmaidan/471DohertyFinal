@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public Slider volumeSlider;
+    //public Slider volumeSlider;
 
 
 
@@ -20,12 +20,12 @@ public class MainMenu : MonoBehaviour
 
         SetVolume(savedVolume);
 
-        volumeSlider.SetValueWithoutNotify(savedVolume);
-        volume
+     //   volumeSlider.SetValueWithoutNotify(savedVolume);
+       // volume;
     }
     private void StartGame()
     {
-        SceneManager.LoadScene(loadtoScene);
+       // SceneManager.LoadScene(loadtoScene);
     }
     public void OpenSettings()
     {
@@ -47,7 +47,7 @@ public class MainMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        AudioListener.volume = value;
+       // AudioListener.volume = value;
 
     }
 }

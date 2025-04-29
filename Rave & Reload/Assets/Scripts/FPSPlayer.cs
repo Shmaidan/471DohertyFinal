@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+
 public class FirstPersonController : MonoBehaviour
 {
 
@@ -15,8 +16,6 @@ public class FirstPersonController : MonoBehaviour
 
     [SerializeField]
     float speed = 3f;
-   
-   
 
     [SerializeField]
     float mouseSensitivity = 40;
@@ -30,6 +29,8 @@ public class FirstPersonController : MonoBehaviour
     float health = 10;
     [SerializeField]
     float shootCooldown = 0.5f;  // Cooldown duration in seconds
+    private AudioSource fireSound;
+ 
 
     private float shootCooldownTimer = 0f;
     private bool hasPowerup = false;
@@ -51,6 +52,7 @@ public class FirstPersonController : MonoBehaviour
         rb.freezeRotation = true;
         Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<CharacterController>();
+        fireSound = GetComponent<AudioSource>();
     }
 
    
@@ -139,7 +141,9 @@ public class FirstPersonController : MonoBehaviour
     {
         if (shootCooldownTimer <= 0f)
         {
+            
             Instantiate(PlayerBullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
+            fireSound.Play();
             shootCooldownTimer = shootCooldown;  // Reset the cooldown timer
         }
     }

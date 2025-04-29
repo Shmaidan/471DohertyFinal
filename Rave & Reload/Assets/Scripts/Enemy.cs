@@ -13,14 +13,15 @@ public class Enemy : MonoBehaviour
     private Transform player;
    private Rigidbody enemyRb;
     public ParticleSystem particles;
-    public AudioSource deathSound;
+    public AudioClip soundToPlayOnDeath;
+    private AudioSource audioSource;
     
     public bool isDead; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
-      
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
        
     }
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour
        
         if (health <= 0)
         {
+            AudioSource.PlayClipAtPoint(soundToPlayOnDeath, transform.position);
             Instantiate(particles, transform.position, Quaternion.identity);
             
             Destroy(gameObject);

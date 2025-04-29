@@ -31,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 2814443271200614000}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.28, y: -4.601, z: 42.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -17.281, y: -4.7867, z: 42.673}
+  m_LocalScale: {x: 1.1545533, y: 1.0726008, z: 1.1545533}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2682218932450624094}
@@ -154,10 +154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a481a4865e37e7449946f95d82a014f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
+  health: 3
   speed: 1.5
   particles: {fileID: 2915937954629518116, guid: d1e98e5c10cda284d8e2f1620eeb153a, type: 3}
-  deathSound: {fileID: 0}
+  soundToPlayOnDeath: {fileID: 8300000, guid: df77e4a2e7ce8484badacf448c47ee48, type: 3}
   isDead: 0
 --- !u!114 &1818109688066623329
 MonoBehaviour:
@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 7323640488818088492}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21, y: 0.79, z: 1.08}
+  m_LocalPosition: {x: -0.058, y: 0.66, z: 1.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

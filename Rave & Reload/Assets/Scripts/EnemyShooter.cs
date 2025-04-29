@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+
 public class EnemyShooter : MonoBehaviour
 {
     public GameObject enemyBullet;
@@ -8,7 +10,7 @@ public class EnemyShooter : MonoBehaviour
     public float bulletSpeed = 10f;
 
     private Transform player;
-    private float timer; 
+    private float timer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,7 +28,7 @@ public class EnemyShooter : MonoBehaviour
         Vector3 lookDirection = player.position - transform.position;
         transform.rotation = Quaternion.LookRotation(lookDirection);
 
-        timer -= Time.deltaTime;    
+        timer -= Time.deltaTime;
         if (timer <= 0f)
         {
             shootAtPlayer();
@@ -37,6 +39,6 @@ public class EnemyShooter : MonoBehaviour
     void shootAtPlayer()
     {
         Instantiate(enemyBullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
-        
+
     }
 }
