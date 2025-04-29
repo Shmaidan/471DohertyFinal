@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HoloWhatever
+  m_Name: Purple 1
   m_Shader: {fileID: -6465566751694194690, guid: 383f4fc23c52dda46b847ae64178bfd7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -68,18 +68,18 @@ Material:
     - _CastShadows: 1
     - _Cull: 2
     - _DstBlend: 10
-    - _FresnelPower: -2.41
+    - _FresnelPower: -0.71
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5
     - _Surface: 1
-    - _VertexOffset: 1
+    - _VertexOffset: 0.7
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _FresnelColor: {r: 0.0013954267, g: 0.04905659, b: 0, a: 0.5019608}
-    - _ScanLineSpeed: {r: 1.56, g: 4.66, b: 0, a: 0}
-    - _ScanLineTiling: {r: 1.13, g: 2.52, b: 0, a: 0}
+    - _FresnelColor: {r: 0.10943389, g: 0, b: 0.0752358, a: 0.5019608}
+    - _ScanLineSpeed: {r: 1.74, g: 4.66, b: 0, a: 0}
+    - _ScanLineTiling: {r: 1, g: 3, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

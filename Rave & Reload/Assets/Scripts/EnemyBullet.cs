@@ -12,6 +12,7 @@ public class EnemyBullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         rb.AddForce(transform.forward * bulletspeed, ForceMode.Impulse); // Impulse for instant velocity
         Destroy(gameObject, lifetime); // Destroy after some time
     }
@@ -22,7 +23,7 @@ public class EnemyBullet : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggernEnter(Collider collision)
     {
         Destroy(gameObject);
     }

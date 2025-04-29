@@ -30,7 +30,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField]
     float shootCooldown = 0.5f;  // Cooldown duration in seconds
     private AudioSource fireSound;
- 
+   [SerializeField] private DamageFlash damageFlash;
 
     private float shootCooldownTimer = 0f;
     private bool hasPowerup = false;
@@ -105,17 +105,20 @@ public class FirstPersonController : MonoBehaviour
         {
             Debug.Log("Bullet hit!");
             health -= 1;
+            damageFlash.TriggerFlash();
             Destroy(other.gameObject);
         }
 
         if (other.CompareTag("Laser"))
         {
+            damageFlash.TriggerFlash();
             Debug.Log("Laser hit!");
             health -= 2;
         }
         if (other.CompareTag("Drum") )
         {
             Debug.Log("Drum hit!");
+            damageFlash.TriggerFlash();
             health -= 1;
         }
     }

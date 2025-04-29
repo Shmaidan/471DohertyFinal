@@ -1,5 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Piano : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class Piano : MonoBehaviour
     public AudioSource deathSound;
     public bool isVulnerable = false;
     public GameObject offLasers;
+   
 
     private BoxCollider boxCol;
 
@@ -35,9 +38,14 @@ public class Piano : MonoBehaviour
             Instantiate(particles, transform.position, Quaternion.identity);
             Destroy(gameObject);
 
+            StartCoroutine(LoadEndScreenAfterDelay());
         }
     }
-
+    IEnumerator LoadEndScreenAfterDelay()
+    {
+        yield return new WaitForSeconds(2f); 
+        SceneManager.LoadScene("EndGame"); 
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (isVulnerable && other.GetComponent<PlayerBullet>() != null)
