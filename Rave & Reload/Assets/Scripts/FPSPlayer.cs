@@ -144,10 +144,13 @@ public class FirstPersonController : MonoBehaviour
     {
         if (shootCooldownTimer <= 0f)
         {
-            
-            Instantiate(PlayerBullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
+            GameObject bullet = Instantiate(PlayerBullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
+
+            Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+            bulletRb.AddForce(bulletSpawner.transform.forward * 20f, ForceMode.Impulse);  // Use same speed as in prefab or serialize it
+
             fireSound.Play();
-            shootCooldownTimer = shootCooldown;  // Reset the cooldown timer
+            shootCooldownTimer = shootCooldown;
         }
     }
     public void AddHealth(float amount)

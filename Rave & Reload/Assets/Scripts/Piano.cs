@@ -36,15 +36,17 @@ public class Piano : MonoBehaviour
         if (health <= 0)
         {
             Instantiate(particles, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-
             StartCoroutine(LoadEndScreenAfterDelay());
+           
+            Destroy(gameObject, 3f); // Delay destruction so coroutine can run
+
+
         }
     }
     IEnumerator LoadEndScreenAfterDelay()
     {
         yield return new WaitForSeconds(2f); 
-        SceneManager.LoadScene("EndGame"); 
+        SceneManager.LoadScene(1); 
     }
     private void OnTriggerEnter(Collider other)
     {

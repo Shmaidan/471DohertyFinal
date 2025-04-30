@@ -12,7 +12,7 @@ public class PlayerBullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * bulletspeed, ForceMode.Impulse); // Impulse for instant velocity
+         // Impulse for instant velocity
         Destroy(gameObject, lifetime); // Destroy after some time
     }
 
